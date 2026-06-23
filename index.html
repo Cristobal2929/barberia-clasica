@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbería La Navaja – Corte clásico, estilo moderno</title>
+  <!-- Google Fonts: Playfair Display (display) + Inter (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #c41e3a;   /* rojo barbería */
+      --color-accent: #1e3a8a;    /* azul profundo */
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin:0; font-family: var(--font-body); line-height:1.6; color:#222;
+      background:#f9f9f9;
+    }
+    a { color: var(--color-primary); text-decoration:none; }
+    a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+    header {
+      background: var(--color-primary);
+      color:#fff;
+      padding:2rem 1rem;
+      text-align:center;
+    }
+    header h1 {
+      font-family: var(--font-display);
+      font-size:2.5rem;
+      margin:0;
+    }
+    header p {
+      margin-top:.5rem;
+      font-size:1.2rem;
+    }
+
+    .pole {
+      width: 80px;
+      height: 200px;
+      margin:2rem auto;
+      position:relative;
+    }
+    .pole::before,
+    .pole::after {
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      width: 80px;
+      height: 30px;
+      background: var(--color-primary);
+    }
+    .pole::before {
+      top:0;
+      background: linear-gradient(45deg,
+        var(--color-primary) 33%,
+        #fff 33%,
+        #fff 66%,
+        var(--color-primary) 66%);
+      background-size: 100% 60px;
+    }
+    .pole::after {
+      bottom:0;
+      background: var(--color-primary);
+    }
+    .pole .stripe {
+      position:absolute;
+      top:30px;
+      left:0;
+      width:100%;
+      height:140px;
+      background: linear-gradient(45deg,
+        var(--color-primary) 33%,
+        #fff 33%,
+        #fff 66%,
+        var(--color-primary) 66%);
+      background-size: 100% 60px;
+      animation: spin 8s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pole .stripe { animation:none; }
+    }
+    @keyframes spin {
+      from { transform:translateY(0) rotate(0deg); }
+      to   { transform:translateY(0) rotate(360deg); }
+    }
+
+    .content {
+      max-width: 800px;
+      margin:2rem auto;
+      padding:0 1rem;
+    }
+    .section {
+      margin-bottom:2rem;
+    }
+    .section h2 {
+      font-family: var(--font-display);
+      color: var(--color-primary);
+      font-size:1.8rem;
+      margin-bottom:.5rem;
+    }
+    .btn {
+      display:inline-block;
+      padding:.75rem 1.5rem;
+      background: var(--color-primary);
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      font-weight:500;
+      cursor:pointer;
+      transition:background .3s;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--color-accent);
+    }
+
+    footer {
+      background:#222;
+      color:#ddd;
+      text-align:center;
+      padding:1rem;
+      font-size:.9rem;
+    }
+
+    /* Mobile */
+    @media (max-width:600px) {
+      header h1 {font-size:2rem;}
+      .pole {width:60px; height:150px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Barbería La Navaja</h1>
+    <p>Corte clásico, estilo moderno</p>
+    <div class="pole" aria-hidden="true">
+      <div class="stripe"></div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section" id="sobre-nosotros">
+      <h2>Sobre nosotros</h2>
+      <p>Fundada en 1998, <strong>Barbería La Navaja</strong> combina la tradición del afeitado a navaja con las tendencias actuales de estilo. Nuestro equipo está formado por barberos certificados que cuidan cada detalle, desde el primer saludo hasta el último toque de cera.</p>
+    </section>
+
+    <section class="section" id="servicios">
+      <h2>Servicios</h2>
+      <ul>
+        <li><strong>Corte clásico</strong> – 30 min – 25 €</li>
+        <li><strong>Barba a navaja</strong> – 20 min – 20 €</li>
+        <li><strong>Ritual de afeitado</strong> – 45 min – 35 €</li>
+        <li><strong>Peinado y estilo</strong> – 30 min – 22 €</li>
+      </ul>
+      <button class="btn" onclick="alert('¡Reserva en línea próximamente!')">Reserva ahora</button>
+    </section>
+
+    <section class="section" id="contacto">
+      <h2>Contacto</h2>
+      <p>📍 Calle del Barbero 12, 28001 Madrid</p>
+      <p>📞 <a href="tel:+34123456789">+34 123 456 789</a></p>
+      <p>✉️ <a href="mailto:info@lavanaja.es">info@lavanaja.es</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2024 Barbería La Navaja – Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Pequeña mejora de accesibilidad: foco visible en botones ya está manejado por CSS.
+    // Aquí podríamos añadir lógica de reserva, pero se mantiene simple.
+  </script>
+</body>
+</html>
