@@ -38,6 +38,14 @@
       font-size:1.2rem;
     }
 
+    .hero-image {
+      width:100%;
+      max-height:400px;
+      object-fit:cover;
+      margin-top:1rem;
+      border-radius:8px;
+    }
+
     .pole {
       width: 80px;
       height: 200px;
@@ -103,6 +111,21 @@
       font-size:1.8rem;
       margin-bottom:.5rem;
     }
+    .service-list {
+      list-style:none;
+      padding:0;
+    }
+    .service-item {
+      display:flex;
+      align-items:center;
+      margin-bottom:.75rem;
+    }
+    .service-item img {
+      width:40px;
+      height:40px;
+      margin-right:0.75rem;
+      border-radius:4px;
+    }
     .btn {
       display:inline-block;
       padding:.75rem 1.5rem;
@@ -138,6 +161,9 @@
   <header>
     <h1>Barbería La Navaja</h1>
     <p>Corte clásico, estilo moderno</p>
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+         alt="Barbería interior"
+         class="hero-image">
     <div class="pole" aria-hidden="true">
       <div class="stripe"></div>
     </div>
@@ -151,11 +177,23 @@
 
     <section class="section" id="servicios">
       <h2>Servicios</h2>
-      <ul>
-        <li><strong>Corte clásico</strong> – 30 min – 25 €</li>
-        <li><strong>Barba a navaja</strong> – 20 min – 20 €</li>
-        <li><strong>Ritual de afeitado</strong> – 45 min – 35 €</li>
-        <li><strong>Peinado y estilo</strong> – 30 min – 22 €</li>
+      <ul class="service-list">
+        <li class="service-item">
+          <img src="https://images.unsplash.com/photo-1582719478185-5c5c6c0c0c2b?auto=format&fit=crop&w=80&q=80" alt="Corte clásico">
+          <span><strong>Corte clásico</strong> – 30 min – 25 €</span>
+        </li>
+        <li class="service-item">
+          <img src="https://images.unsplash.com/photo-1600185362745-4c5c2e5e4b5c?auto=format&fit=crop&w=80&q=80" alt="Barba a navaja">
+          <span><strong>Barba a navaja</strong> – 20 min – 20 €</span>
+        </li>
+        <li class="service-item">
+          <img src="https://images.unsplash.com/photo-1556228720-6c0f5b5c8e5c?auto=format&fit=crop&w=80&q=80" alt="Ritual de afeitado">
+          <span><strong>Ritual de afeitado</strong> – 45 min – 35 €</span>
+        </li>
+        <li class="service-item">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=80&q=80" alt="Peinado y estilo">
+          <span><strong>Peinado y estilo</strong> – 30 min – 22 €</span>
+        </li>
       </ul>
       <button class="btn" onclick="alert('¡Reserva en línea próximamente!')">Reserva ahora</button>
     </section>
